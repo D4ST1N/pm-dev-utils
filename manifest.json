@@ -1,6 +1,6 @@
 {
   "name": "PM Dev Utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helpful functionality for PM developers",
   "permissions": ["activeTab", "declarativeContent", "storage", "https://*/"],
   "background": {

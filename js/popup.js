@@ -4,6 +4,7 @@ import './components/User.js';
 import './components/Authorization.js';
 import './components/Header.js';
 import './components/Platform.js';
+import './components/AddToken.js';
 
 const app = new Vue({
   render(createElement) {
@@ -29,6 +30,16 @@ const app = new Vue({
             }
           }),
         ),
+        this.platforms[0].mergeRequests.length
+          ? createElement('AddToken', {
+              props: {
+                checkData: {
+                  project: this.platforms[0].key,
+                  iid: this.platforms[0].mergeRequests[0].iid,
+                }
+              }
+            })
+          : ''
       ],
     );
   },

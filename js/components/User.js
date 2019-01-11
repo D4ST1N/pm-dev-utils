@@ -18,7 +18,20 @@ Vue.component('User', {
           attrs: {
             src: this.user.avatar_url,
           },
-        })
+        }),
+        this.privateTokenWarning
+          ? createElement('div', {
+            class: {
+              'user__token-missing': true,
+            },
+            attrs: {
+              title: 'Please add private_token to Upvote & Downvote'
+            },
+            on: {
+              click: this.addToken
+            },
+          })
+          : '',
       ]);
     }
   },
@@ -26,17 +39,31 @@ Vue.component('User', {
   data() {
     return {
       user: null,
+      privateTokenWarning: false,
     };
   },
 
   created() {
-    chrome.storage.sync.get(['private_key'], (storage) => {
-      console.log(storage);
-    });
+    this.updateToken();
     this.$root.$on('authorize', () => {
       chrome.storage.sync.get(['user'], (storage) => {
         this.user = storage.user;
       });
     });
+    this.$root.$on('tokenSet', this.updateToken);
   },
+
+  methods: {
+    addToken() {
+      this.$root.$emit('addToken');
+    },
+
+    updateToken() {
+      chrome.storage.sync.get(['private_token'], (storage) => {
+        if (!storage.private_token) {
+          this.privateTokenWarning = true;
+        }
+      });
+    }
+  }
 });

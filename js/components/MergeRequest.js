@@ -164,6 +164,11 @@ Vue.component('MergeRequest', {
     };
   },
 
+  created() {
+    this.updateToken();
+    this.$root.$on('tokenSet', this.updateToken);
+  },
+
   methods: {
     getTaskFromTitle(title) {
       return title.match(/[A-Z]{1,2}-\d+/);
@@ -207,6 +212,14 @@ Vue.component('MergeRequest', {
         private_token: this.private_token,
       };
       post(`${url}?${processParams(params)}`).then(console.log).catch(console.log);
-    }
+    },
+
+    updateToken() {
+      chrome.storage.sync.get(['private_token'], (storage) => {
+        if (storage.private_token) {
+          this.private_token = storage.private_token;
+        }
+      });
+    },
   }
 });

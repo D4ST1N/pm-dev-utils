@@ -14,3 +14,10 @@
     border-radius: 50%;
     margin-left: var(--main-retreat);
 }
+
+.user__token-missing {
+    width: calc(var(--main-retreat) * 3);
+    height: calc(var(--main-retreat) * 3);
+    margin-left: var(--main-retreat);
+    background: url("../../images/danger.png") no-repeat center;
+}

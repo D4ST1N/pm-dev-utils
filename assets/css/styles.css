@@ -2,6 +2,7 @@
 @import "./components/Header.css";
 @import "./components/Platform.css";
 @import "./components/MergeRequest.css";
+@import "./components/AddToken.css";
 
 :root {
     --main-container-width: 700px;

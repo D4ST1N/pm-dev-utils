@@ -115,3 +115,17 @@
     margin: 0 var(--main-retreat);
     background: url('../../images/right-arrow.png') no-repeat center;
 }
+
+.merge-request__actions {
+    margin-top: var(--main-retreat);
+}
+.merge-request__action {
+    font-size: var(--medium-text-size);
+    padding: calc(var(--main-retreat) / 2) var(--main-retreat);
+    background: var(--light-color);
+    color: var(--dark-color);
+    border-radius: var(--border-radius);
+    border: 0;
+    margin-right: var(--main-retreat);
+    cursor: pointer;
+}
