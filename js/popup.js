@@ -1,0 +1,81 @@
+import { get, processParams } from './utils.js';
+import { api } from './apiUrls.js';
+import './components/User.js';
+import './components/Authorization.js';
+import './components/Header.js';
+import './components/Platform.js';
+
+const app = new Vue({
+  render(createElement) {
+    return createElement(
+      'div',
+      {
+        class: {
+          'main-container': true,
+        },
+      },
+      [
+        createElement('Authorization'),
+        createElement('Header', {
+          on: {
+            toggleFilter: this.toggleFilter
+          }
+        }),
+        this.platforms.map(
+          platform => createElement('Platform', {
+            props: {
+              platform,
+              filterActive: this.filterActive,
+            }
+          }),
+        ),
+      ],
+    );
+  },
+  data() {
+    return {
+      platforms: [
+        {
+          label: 'Desktop',
+          key: 'air/air-pm',
+          mergeRequests: [],
+        },
+        {
+          label: 'Mobile',
+          key: 'air/air-mobile',
+          mergeRequests: [],
+        },
+      ],
+      filterActive: true,
+    };
+  },
+
+  created() {
+    this.getMergeRequests();
+  },
+
+  methods: {
+    getMergeRequests() {
+      this.platforms.forEach((platform) => {
+        const params = processParams({
+          private_token: '5VK28u4H9d39NFv1r7sv',
+          state: 'opened',
+        });
+        const baseUrl = api.mergeRequests.replace(
+          '{project}',
+          encodeURIComponent(platform.key),
+        );
+        const url = `${baseUrl}?${params}`;
+
+        get(url).then((response) => {
+          platform.mergeRequests = JSON.parse(response);
+        })
+                .catch(console.error);
+      });
+    },
+
+    toggleFilter(isActive) {
+      this.filterActive = isActive;
+    },
+  },
+}).$mount('#app');

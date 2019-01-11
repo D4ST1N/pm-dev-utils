@@ -1,0 +1,16 @@
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user__name {
+    color: var(--light-color);
+    font-size: var(--small-text-size);
+}
+
+.user__avatar {
+    width: calc(var(--main-retreat) * 3);
+    height: calc(var(--main-retreat) * 3);
+    border-radius: 50%;
+    margin-left: var(--main-retreat);
+}

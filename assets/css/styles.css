@@ -1,0 +1,56 @@
+@import "./components/User.css";
+@import "./components/Header.css";
+@import "./components/Platform.css";
+@import "./components/MergeRequest.css";
+
+:root {
+    --main-container-width: 700px;
+    --main-container-height: 550px;
+    --main-bg-color: #2196f3;
+    --dark-blue-color: #1976d2;
+    --main-retreat: 8px;
+    --border-radius: 4px;
+    --light-color: #fff;
+    --dark-color: #37474f;
+    --success-color: #66bb6a;
+    --failure-color: #ff7043;
+    --big-text-size: 16px;
+    --medium-text-size: 14px;
+    --small-text-size: 12px;
+    --box-shadow: 2px 2px 4px 0 rgba(13,71,161 ,.8);
+}
+
+body {
+    margin: 0;
+    padding: calc(var(--main-retreat) * 2);
+    background: var(--main-bg-color);
+}
+
+body *,
+body *::before,
+body *::after {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    margin-left: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, .4);
+}
+
+.main-container {
+    width: var(--main-container-width);
+    max-height: var(--main-container-height);
+    padding-right: var(--main-retreat);
+    overflow: auto;
+}

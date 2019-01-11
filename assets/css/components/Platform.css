@@ -1,0 +1,16 @@
+.platform {
+    background: var(--dark-blue-color);
+    padding: var(--main-retreat);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.platform:not(:last-child) {
+    margin-bottom: calc(var(--main-retreat) * 2);
+}
+
+.platform__label {
+    color: var(--light-color);
+    font-size: var(--big-text-size);
+    margin-bottom: var(--main-retreat);
+}
