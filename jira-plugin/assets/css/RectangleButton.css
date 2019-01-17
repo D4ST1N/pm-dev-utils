@@ -1,0 +1,32 @@
+.rectangle-button {
+    border: 0;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    display: inline-flex;
+    line-height: 1;
+    padding: var(--vertical-retreat) var(--horizontal-retreat);
+    cursor: pointer;
+    pointer-events: all;
+    transition: all .5s;
+    color: var(--color-light);
+}
+
+.rectangle-button:hover {
+    filter: brightness(0.85);
+}
+
+.rectangle-button:focus {
+    outline: 0;
+}
+
+.rectangle-button--green {
+    background: var(--color-green);
+}
+
+.rectangle-button--red {
+    background: var(--color-red);
+}
+
+.rectangle-button--blue {
+    background: var(--color-blue);
+}

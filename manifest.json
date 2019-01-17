@@ -1,12 +1,49 @@
 {
   "name": "PM Dev Utils",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Helpful functionality for PM developers",
-  "permissions": ["activeTab", "declarativeContent", "storage", "https://*/"],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "declarativeContent",
+    "storage",
+    "experimental",
+    "https://*/"
+  ],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/*",
+        "https://jira.betlab.com/browse/*"
+      ],
+      "js": [
+        "js/libs/vue.min.js",
+        "jira-plugin/js/utils.js",
+        "jira-plugin/js/Settings.js",
+        "jira-plugin/js/components/CircleButton.js",
+        "jira-plugin/js/components/RectangleButton.js",
+        "jira-plugin/js/components/CreateBranch.js",
+        "jira-plugin/js/components/BranchPart.js",
+        "jira-plugin/js/components/BranchSelector.js",
+        "jira-plugin/js/components/Loader.js",
+        "jira-plugin/js/JiraPlugin.js"
+      ],
+      "css": [
+        "jira-plugin/assets/css/variables.css",
+        "jira-plugin/assets/css/JiraPlugin.css",
+        "jira-plugin/assets/css/CircledButton.css",
+        "jira-plugin/assets/css/RectangleButton.css",
+        "jira-plugin/assets/css/BranchPart.css",
+        "jira-plugin/assets/css/BranchSelector.css",
+        "jira-plugin/assets/css/Loader.css",
+        "jira-plugin/assets/css/CreateBranch.css"
+      ]
+    }
+  ],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -23,5 +60,8 @@
     }
   },
   "options_page": "options.html",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "web_accessible_resources": [
+    "/jira-plugin/assets/*"
+  ]
 }

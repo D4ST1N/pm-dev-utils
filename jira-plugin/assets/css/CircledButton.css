@@ -1,0 +1,65 @@
+.circled-button {
+    height: var(--circled-button);
+    width: var(--circled-button);
+    min-height: var(--circled-button);
+    min-width: var(--circled-button);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    line-height: 1;
+    padding: var(--horizontal-retreat);
+    cursor: pointer;
+    pointer-events: all;
+    transition: all .375s;
+}
+
+.circled-button:focus,
+.circled-button:hover {
+    outline: none;
+    filter: brightness(0.9);
+}
+
+.circled-button--green {
+    background: var(--color-green);
+}
+
+.circled-button--purple {
+    background: var(--color-purple);
+}
+
+.circled-button--grey {
+    background: var(--color-gray);
+}
+
+.circled-button--pink {
+    background: var(--color-pink);
+}
+
+.circled-button--dark-grey {
+    background: var(--color-dark);
+}
+
+.circled-button__icon {
+    -webkit-transition: all .5s;
+    height: calc(var(--circled-button) - var(--horizontal-retreat) * 2);
+    width: calc(var(--circled-button) - var(--horizontal-retreat) * 2);
+    pointer-events: none;
+    transition: all .5s;
+}
+
+.circled-button__icon--pen {
+    background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/pen.png') no-repeat center/contain;
+}
+
+.circled-button__icon--branch {
+    background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/branch.png') no-repeat center/contain;
+}
+
+.circled-button__icon--gear {
+    background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/gears.png') no-repeat center/contain;
+}
+
+.circled-button__icon--table {
+    background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/table.png') no-repeat center/contain;
+}

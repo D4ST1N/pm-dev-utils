@@ -1,0 +1,13 @@
+.create-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 20px;
+    right: 220px;
+}
+
+.create-branch__branch-container {
+    margin-bottom: var(--vertical-retreat);
+    display: flex;
+}
