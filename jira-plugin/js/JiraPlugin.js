@@ -1,7 +1,6 @@
 const jiraPlugin = document.createElement('div');
 jiraPlugin.id = 'jiraPlugin';
 document.body.appendChild(jiraPlugin);
-console.log(Vue);
 
 function getPointCoordinates(center, radius, angle) {
   const radians = (angle * Math.PI) / 180;
@@ -102,7 +101,6 @@ const app = new Vue({
   },
 
   created() {
-    console.log('It works!');
     chrome.storage.sync.get(['jiraPluginSettings'], (storage) => {
       this.settings = storage.jiraPluginSettings;
       this.buttons.forEach((value, index) => {

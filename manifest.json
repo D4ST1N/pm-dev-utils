@@ -1,13 +1,12 @@
 {
   "name": "PM Dev Utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Helpful functionality for PM developers",
   "permissions": [
     "activeTab",
     "tabs",
     "declarativeContent",
     "storage",
-    "experimental",
     "https://*/"
   ],
   "background": {

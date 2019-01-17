@@ -54,6 +54,7 @@ Vue.component('BranchSelector', {
 
     selectBranch(branch) {
       this.$root.$emit('selectCustomBranch', branch);
+      this.show = false;
     },
 
     getBranches() {

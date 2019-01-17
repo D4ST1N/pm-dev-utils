@@ -63,7 +63,6 @@ Vue.component('BranchPart', {
 
     selectValue(value) {
       this.showValues = false;
-      console.log('selectValue', value);
       this.$emit('selectValue', value);
     },
 

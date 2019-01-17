@@ -5,8 +5,6 @@ const defaultSettings = {
 };
 
 chrome.storage.sync.get(['jiraPluginSettings'], (storage) => {
-  console.log(storage);
-
   if (Object.keys(storage).length === 0) {
     chrome.storage.sync.set({
       jiraPluginSettings: defaultSettings,

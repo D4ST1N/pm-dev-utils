@@ -200,9 +200,11 @@ Vue.component('CreateBranch', {
 
   methods: {
     setNewValue(key, value) {
-      console.log('selectedEvent', value);
       this[key].map(prop => prop.selected = false);
       value.selected = true;
+      if (key === 'platforms') {
+        this.checkBranchExist();
+      }
     },
 
     getSelected(key) {
@@ -263,13 +265,11 @@ Vue.component('CreateBranch', {
       const url = `https://git.betlab.com/api/v4/projects/${project}/repository/branches?${processParams({
         search: this.task[0].name,
       })}`;
-      console.log('check');
 
       get(url)
         .then((branches) => {
           const parsedBranches = JSON.parse(branches);
           this.branchExist = parsedBranches.length > 0;
-          console.log(this.branchExist);
 
           if (this.branchExist) {
             this.existedBranch = parsedBranches[0].name;
@@ -279,7 +279,7 @@ Vue.component('CreateBranch', {
     },
 
     openBranch() {
-      const project = encodeURIComponent(this.getProject());
+      const project = this.getProject();
       const url = 'https://git.betlab.com/{project}/tree/{branch}'
       .replace('{branch}', this.existedBranch)
       .replace('{project}', project);
@@ -289,6 +289,7 @@ Vue.component('CreateBranch', {
     },
 
     createBranch(branchName, targetBranch) {
+      const project = encodeURIComponent(this.getProject());
       chrome.storage.sync.get(['private_token'], (storage) => {
         const params = {
           branch: branchName,
