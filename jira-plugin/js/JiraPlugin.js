@@ -42,7 +42,7 @@ const app = new Vue({
       <CircleButton
         color="dark-grey"
         label="Toggle plugin menu"
-        icon="add"
+        icon="close"
         :class="{ 'main-menu__button--main': true, 'main-menu__button--main--close': show }"
         @click="toggleMenu"
       />
@@ -87,6 +87,7 @@ const app = new Vue({
           </div>
         </transition>
       </div>
+      <DeprecationMessage />
     </div>
   </div>`,
 
@@ -115,7 +116,7 @@ const app = new Vue({
           name: 'copy-commit',
           label: 'Copy commit message',
           icon: 'pen',
-          action: 'copeCommit',
+          action: 'copyCommit',
           color: 'purple',
         },
         {
@@ -220,6 +221,16 @@ const app = new Vue({
       });
     });
     this.$root.$on('addImpact', this.showImpactSurvey);
+    this.$root.$on('copyCommit', this.copyCommitMessage);
+  },
+
+  mounted() {
+    this.setCommitMessage();
+    const oldPlugin = document.getElementById('app');
+
+    if (oldPlugin) {
+      this.$root.$emit('showDeprecationMessage');
+    }
   },
 
   methods: {
@@ -366,13 +377,6 @@ const app = new Vue({
       return index * (90 / (this.buttons.length - 1));
     },
 
-    setCommitMessage() {
-      const ticket = jira.getTicketID();
-      const ticketName = jira.getTicketName();
-      const ticketNameFormatted = ticketName.replace(/\s\s/ig, ' ').replace(/\[.*?\]/ig, '').trim();
-      this.commitMessage = `[${ticket}] ${ticketNameFormatted}`;
-    },
-
     toggleMenu() {
       this.show = !this.show;
 
@@ -391,6 +395,24 @@ const app = new Vue({
           title: 'Copied :)',
         });
       }
+    },
+
+    setCommitMessage() {
+      const issueId = location.pathname.match(/\w+-\d+$/)[0];
+      const ticketName = document.getElementById('summary-val').innerText;
+      const ticketNameFormatted = ticketName.replace(/\s\s/ig, ' ').replace(/\[.*?]/ig, '').trim();
+      this.commitMessage = `[${issueId}] ${ticketNameFormatted}`;
+    },
+
+    copyCommitMessage() {
+      navigator.clipboard.writeText(this.commitMessage)
+               .then(() => {
+                 console.log('Text copied to clipboard');
+               })
+               .catch(err => {
+                 // This can happen if the user denies clipboard permissions:
+                 console.error('Could not copy text: ', err);
+               });
     },
   }
 });

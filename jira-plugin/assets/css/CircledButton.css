@@ -63,3 +63,8 @@
 .circled-button__icon--table {
     background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/table.png') no-repeat center/contain;
 }
+
+.circled-button__icon--close {
+    background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/close.png') no-repeat center/contain;
+    transform: rotate(-135deg);
+}

@@ -1,0 +1,20 @@
+.deprecation-message {
+    position: fixed;
+    width: 500px;
+    left: calc(50% - 250px);
+    top: 150px;
+    background: var(--color-dark);
+    padding: 20px;
+    color: var(--color-light);
+}
+
+.deprecation-message__title {
+    color: var(--color-light);
+}
+
+.deprecation-message__image {
+    width: 223px;
+    height: 439px;
+    background: url('chrome-extension://__MSG_@@extension_id__/jira-plugin/assets/img/deprecated-plugin.png') no-repeat center;
+    margin: 10px auto;
+}

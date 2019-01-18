@@ -1,6 +1,6 @@
 {
   "name": "PM Dev Utils",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "Helpful functionality for PM developers",
   "permissions": [
     "activeTab",
@@ -16,7 +16,6 @@
   "content_scripts": [
     {
       "matches": [
-        "http://localhost/*",
         "https://jira.betlab.com/browse/*"
       ],
       "js": [
@@ -29,6 +28,7 @@
         "jira-plugin/js/components/BranchPart.js",
         "jira-plugin/js/components/BranchSelector.js",
         "jira-plugin/js/components/Loader.js",
+        "jira-plugin/js/components/DeprecationMessage.js",
         "jira-plugin/js/JiraPlugin.js"
       ],
       "css": [
@@ -39,6 +39,7 @@
         "jira-plugin/assets/css/BranchPart.css",
         "jira-plugin/assets/css/BranchSelector.css",
         "jira-plugin/assets/css/Loader.css",
+        "jira-plugin/assets/css/DeprecationMessage.css",
         "jira-plugin/assets/css/CreateBranch.css"
       ]
     }
