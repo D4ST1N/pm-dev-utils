@@ -98,13 +98,13 @@ const app = new Vue({
       show: true,
       showBranchButton: true,
       buttons: [
-        {
-          name: 'settings',
-          label: 'Settings',
-          icon: 'gear',
-          action: 'showSettings',
-          color: 'grey',
-        },
+        // {
+        //   name: 'settings',
+        //   label: 'Settings',
+        //   icon: 'gear',
+        //   action: 'showSettings',
+        //   color: 'grey',
+        // },
         {
           name: 'add-impact',
           label: 'Add Impact Analysis',
