@@ -1,6 +1,6 @@
 {
   "name": "PM Dev Utils",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Helpful functionality for PM developers",
   "permissions": [
     "activeTab",
@@ -42,6 +42,27 @@
         "jira-plugin/assets/css/DeprecationMessage.css",
         "jira-plugin/assets/css/CreateBranch.css"
       ]
+    },
+    {
+      "matches": [
+        "http://*.hp.consul/*",
+        "https://*.betlab.com/*",
+        "https://*.parimatch.com/*",
+        "https://*.parimatch.ge/*",
+        "https://*.parimatch.com.cy/*",
+        "https://*.parimatch.ru/*"
+      ],
+      "exclude_matches": [
+        "https://confluence.betlab.com/*",
+        "https://git.betlab.com/*"
+      ],
+      "js": [
+        "pm-plugin/js/PmPlugin.js"
+      ],
+      "css": [
+        "pm-plugin/assets/css/PmPlugin.css",
+        "pm-plugin/assets/css/OLdStyles.css"
+      ]
     }
   ],
   "browser_action": {
@@ -62,6 +83,7 @@
   "options_page": "options.html",
   "manifest_version": 2,
   "web_accessible_resources": [
-    "/jira-plugin/assets/*"
+    "/jira-plugin/assets/*",
+    "/pm-plugin/assets/*"
   ]
 }

@@ -1,0 +1,30 @@
+.old-style-switcher {
+    display: flex;
+    position: fixed;
+    width: 36px;
+    height: 8px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 9999;
+    top: 10px;
+    right: 10px;
+}
+
+.old-style-switcher::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    top: -4px;
+    border-radius: 50%;
+    display: block;
+    background: rgba(207,216,220 ,1);
+    transition: all .375s;
+}
+
+.old-style-switcher--switched::after {
+    left: calc(100% - 16px);
+    background: rgba(76,175,80 ,1);
+}

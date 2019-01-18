@@ -1,0 +1,228 @@
+:root {
+    --main-orange-color: rgba(245, 174, 27, 1);
+    --main-blue-color: rgba(13,71,161 ,1);
+    --main-dark-color: rgba(55,71,79 ,1);
+    --main-darkest-color: rgba(33,33,33 ,1);
+    --main-light-color: rgba(245,245,245 ,1);
+    --main-lightest-color: rgba(255,255,255 ,1);
+}
+
+.old-style-apply {
+    background: #3e3c3a;
+}
+
+.old-style-apply .head-section-wrapper {
+    background: var(--main-lightest-color);
+}
+
+.old-style-apply .head-section-main-menu .navigation__item.active {
+    color: var(--main-lightest-color);
+    border-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.old-style-apply .head-section-main-menu .navigation__item.active::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    top: 25%;
+    background: var(--main-darkest-color);
+    z-index: -1;
+}
+
+.old-style-apply .head-section-wrapper img {
+    position: relative;
+}
+
+.old-style-apply .head-section-wrapper img::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff url('chrome-extension://__MSG_@@extension_id__/pm-plugin/assets/img/pm-logo.svg') no-repeat center;
+}
+
+.old-style-apply .head-section-main-menu .navigation__item {
+    color: var(--main-darkest-color);
+}
+
+.old-style-apply .head-section-sub-section {
+    background-color: var(--main-orange-color);
+    color: var(--main-darkest-color);
+}
+
+.old-style-apply .header__option .dropdown__head .dropdown__item,
+.old-style-apply .header__option .dropdown__head .icon-ai-angle-up,
+.old-style-apply .head-section__link {
+    color: var(--main-darkest-color);
+}
+
+.old-style-apply .header__option .dropdown__head .dropdown__item:hover,
+.old-style-apply .head-section-sub-section:hover,
+.old-style-apply .head-section__link:hover {
+    color: var(--main-light-color);
+    opacity: 1;
+}
+
+.old-style-apply .head-section-login-wrapper > .btn-registration {
+    background: var(--main-blue-color);
+    color: var(--main-light-color);
+}
+
+.old-style-apply .head-section-login-wrapper > .btn-registration:hover {
+    background: var(--main-blue-color);
+}
+
+.old-style-apply .head-section-login-wrapper > .btn-login {
+    background: var(--main-darkest-color);
+    color: var(--main-light-color);
+}
+
+.old-style-apply .head-section-login-wrapper > .btn-login:hover {
+    background: var(--main-darkest-color);
+}
+
+.old-style-apply .head-section-login-wrapper > .btn-login:hover,
+.old-style-apply .head-section-login-wrapper > .btn-registration:hover {
+    color: var(--main-light-color);
+    filter: brightness(1.25);
+}
+
+.old-style-apply .sportbox-head__add {
+    background: var(--main-orange-color);
+}
+
+.old-style-apply .sportbox-head__title {
+    color: var(--main-darkest-color);
+}
+
+.old-style-apply .sportbox-filter {
+    background: var(--main-lightest-color);
+}
+
+.old-style-apply .sportbox-filter .tab {
+    color: var(--main-dark-color);
+}
+
+.old-style-apply .sportbox-filter .tab.active {
+    color: var(--main-dark-color);
+}
+
+.old-style-apply .sportbox-filter .tab:after {
+    background-color: var(--main-orange-color);
+}
+
+.old-style-apply .betslip-tabs .tab {
+    background-color: var(--main-light-color);
+    color: #9f9f9f;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.old-style-apply .betslip-tabs .tab.active {
+    background-color: var(--main-lightest-color);
+    color: var(--main-dark-color);
+}
+
+.old-style-apply .betslip-toolbar-container {
+    background-color: var(--main-lightest-color);
+    color: var(--main-dark-color);
+}
+
+.old-style-apply .toggle-btn:before {
+    border: 1px solid #9f9f9f;
+    box-sizing: border-box;
+}
+
+.old-style-apply .betslip-type-tabs .tabs,
+.old-style-apply .my-bets-tabs .tabs {
+    background-color: var(--main-lightest-color);
+}
+
+.old-style-apply .betslip-type-tabs .tabs .tab.active,
+.old-style-apply .my-bets-tabs .tabs .tab.active {
+    color: var(--main-darkest-color);
+}
+
+.old-style-apply .betslip-type-tabs .tabs .tab:after,
+.old-style-apply .my-bets-tabs .tabs .tab:after {
+    background-color: var(--main-orange-color);
+}
+
+.old-style-apply .betslip-type-tabs,
+.old-style-apply .my-bets-tabs {
+    box-shadow: none;
+    border-bottom: 1px solid #dadada;
+}
+
+.old-style-apply .support__header {
+    background-color: #4c4c4c;
+    color: var(--main-light-color);
+}
+
+.old-style-apply .support__header span {
+    color: var(--main-orange-color);
+}
+
+.old-style-apply .support__content {
+    background-color: #383838;
+}
+
+.old-style-apply .support-tel,
+.old-style-apply .support-mail {
+    color: var(--main-orange-color);
+}
+
+.old-style-apply.old-style-apply .event-wrap-tabs__item.active,
+.old-style-apply.old-style-apply .event-wrap-tabs .tab.active {
+    background-color: #842206;
+    color: var(--main-lightest-color);
+    border-bottom: 0;
+}
+
+.old-style-apply prematch-sport .championship-name-container {
+    background-color: var(--main-orange-color);
+}
+
+.old-style-apply prematch-sport .championship-container {
+    background-color: #d8d8d8;
+}
+
+.old-style-apply prematch-sport .championship-name-container .championship-name-title__text {
+    color: var(--main-dark-color);
+}
+
+.old-style-apply .outcome.active .outcome__coeff {
+    color: var(--main-orange-color);
+}
+
+.old-style-apply .betslip-footer-place-btn {
+    background-color: var(--main-orange-color);
+    color: var(--main-lightest-color);
+}
+
+.old-style-apply .betslip-footer-place-btn:hover {
+    background-color: var(--main-orange-color);
+    filter: brightness(1.10);
+}
+
+.old-style-apply .btn-orange {
+    background-color: var(--main-orange-color);
+    border: 1px solid var(--main-orange-color);
+}
+
+.old-style-apply .btn-orange:hover {
+    color: var(--main-orange-color);
+    background-color: var(--main-lightest-color);
+    border: 1px solid var(--main-orange-color);
+}
+
+.old-style-apply .registration .form-row .form__item.requireStar:before {
+    color: red;
+}
