@@ -120,7 +120,7 @@ Vue.component('CreateBranch', {
             'air',
           ],
           branch: {
-            desktop: 'merge-develop-to-ge',
+            desktop: 'master-ge',
             mobile: 'master',
           },
         },
@@ -141,12 +141,14 @@ Vue.component('CreateBranch', {
           name: 'by',
           selected: false,
           platforms: [
+            'desktop',
             'mobile',
           ],
           projects: [
             'air',
           ],
           branch: {
+            desktop: 'master-by',
             mobile: 'master',
           },
         },
