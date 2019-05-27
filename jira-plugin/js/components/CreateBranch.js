@@ -80,6 +80,21 @@ Vue.component('CreateBranch', {
           },
         },
         {
+          name: 'ua-com',
+          selected: false,
+          platforms: [
+            'desktop',
+            'mobile',
+          ],
+          projects: [
+            'air',
+          ],
+          branch: {
+            desktop: 'master',
+            mobile: 'master',
+          },
+        },
+        {
           name: 'ru',
           selected: false,
           platforms: [
